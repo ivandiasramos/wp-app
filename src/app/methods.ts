@@ -1,0 +1,1 @@
+export const appNamePresentation = (appName: string): string => appName + ' Application'

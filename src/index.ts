@@ -1,7 +1,5 @@
 import './style.scss';
+import { appNamePresentation } from './app/app.module';
 
-const showName = (name: string): void => {
-  console.log(name)
-}
-
-showName('Ivan');
+const appElement: HTMLElement = document.getElementById('app');
+appElement.innerHTML = `<h1>${ appNamePresentation('Webpack') }</h1>`;
