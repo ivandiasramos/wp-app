@@ -1,10 +1,10 @@
 export function remove(arr, func) {
   const removedItems = [];
 
-  arr.forEach(item => {
+  arr.forEach((item, i) => {
     if (func(item)) {
       removedItems.push(item);
-      arr.splice(item, 1);
+      arr.splice(i, 1);
     }
   })
 
