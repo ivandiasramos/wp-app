@@ -1,16 +1,3 @@
-export function remove(arr, func) {
-  const removedItems = [];
-
-  arr.forEach((item, i) => {
-    if (func(item)) {
-      removedItems.push(item);
-      arr.splice(i, 1);
-    }
-  })
-
-  return removedItems;
-}
-
 export function chunk(arr, size) {
   const newArray = [];
   const loop = arr.length / size;
@@ -35,17 +22,13 @@ export function concat(arr, ...values) {
   return [...arr, ...values];
 }
 
-export function difference(arr, values) {
-  const newArray = arr;
+// export function difference(arr, values) {
+//   const newArray = arr;
 
-  remove(newArray, item => values.includes(item));
+//   remove(newArray, item => values.includes(item));
 
-  return newArray;
-}
-
-export function isArray(value) {
-  return value && typeof value === 'object' && value.constructor === Array;
-}
+//   return newArray;
+// }
 
 export function isObject(value) {
   return value && typeof value === 'object' && value.constructor === Object;
