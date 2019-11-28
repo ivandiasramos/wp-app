@@ -1,7 +1,7 @@
 
 import { remove } from './remove';
 
-describe('test with expected parameters', () => {
+describe('When firstParam is array', () => {
   let firstParam: any[];
   let secondParam: Function;
 
@@ -15,17 +15,23 @@ describe('test with expected parameters', () => {
   
     remove(firstParam, secondParam);
   
-    expect(firstParam).toEqual(expectedResult);
+    expect(
+      firstParam
+    )
+    .toEqual(expectedResult);
   });
   
   test('should return itens removed from array', () => {
     const expectedResult = [3];
   
-    expect(remove(firstParam, secondParam)).toEqual(expectedResult);
+    expect(
+      remove(firstParam, secondParam)
+    )
+    .toEqual(expectedResult);
   });
 });
 
-describe('test with non expected parameters', () => {
+describe('When firstParam is not an array', () => {
   let firstParam: number;
   let secondParam: Function;
 
@@ -34,13 +40,19 @@ describe('test with non expected parameters', () => {
     secondParam = item => item === 3;
   })
 
-  test('should not change the arr received', () => {
+  test('should not change the array received', () => {
     remove(firstParam, secondParam);
   
-    expect(firstParam).toEqual(123);
+    expect(
+      firstParam
+    )
+    .toEqual(123);
   });
 
   test('should return undefined', () => {
-    expect(remove(firstParam, secondParam)).toEqual(undefined);
+    expect(
+      remove(firstParam, secondParam)
+    )
+    .toEqual(undefined);
   });
 });
