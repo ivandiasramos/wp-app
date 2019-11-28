@@ -1,4 +1,4 @@
-import { isArray } from './../is-array';
+import { isArray } from './../is-array/is-array';
 
 export function remove(arr, func) {
   const removedItems = [];
@@ -10,7 +10,7 @@ export function remove(arr, func) {
         arr.splice(i, 1);
       }
     })
-  
+
     return removedItems;
   }
 }
