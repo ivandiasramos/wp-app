@@ -9,4 +9,10 @@ module.exports = {
   "transform": {
     "^.+\\.(ts|tsx)$": "ts-jest"
   },
+  "collectCoverageFrom": [
+    "<rootDir>/src/app/methods/**/*.ts",
+    "!<rootDir>/src/app/methods/**/index.ts",
+    "!**/node_modules/**",
+    "!**/vendor/**"
+  ]
 }
