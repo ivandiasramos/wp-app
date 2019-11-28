@@ -7,6 +7,8 @@
     "start": "webpack-dev-server --config webpack.config.js",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:clearCache": "jest --clearCache",
     "build": "webpack"
   },
   "author": "",
