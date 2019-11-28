@@ -1,2 +1,3 @@
-export * from './remove';
-export * from './is-array';
+export { remove } from './remove/remove';
+export { isArray } from './is-array/is-array';
+export { chunk } from './chunk/chunk';
