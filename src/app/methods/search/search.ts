@@ -7,23 +7,13 @@ export function search(arr: any[], searchedValue: string) {
 
   arr.forEach(item =>
     createNewArray(item, searchedValue, newArray, item));
-  
-    newArray
+
   return newArray;
 }
 
 const createNewArray = (valueToBeScanned: any, searchedValue: string, newArray: any[], itemToInterate: any) => {
   if (isObject(valueToBeScanned)) {
-    Object.values(valueToBeScanned)
-      .forEach(value => {
-        if (strContains(valueToBeScanned, searchedValue)) {
-          newArray.push(itemToInterate);
-          return;
-        }
-
-        createNewArray(value, searchedValue, newArray, itemToInterate);
-    })
-    return;
+    objSearch(valueToBeScanned, searchedValue, newArray, itemToInterate);
   }
 
   if (strContains(valueToBeScanned, searchedValue)) {
@@ -36,11 +26,24 @@ const createNewArray = (valueToBeScanned: any, searchedValue: string, newArray: 
       .forEach(item =>
         createNewArray(item, searchedValue, newArray, itemToInterate)
     );
+    return;
+  }
+}
+
+const objSearch = (valueToBeScanned: Object, searchedValue: string, newArray: any[], itemToInterate: any) => {
+  const values = Object.values(valueToBeScanned);
+  for (let i = 0; i < values.length; i ++) {
+    if (strContains(values[i], searchedValue)) {
+      newArray.push(itemToInterate);
+      break;
+    }
+
+    createNewArray(values[i], searchedValue, newArray, itemToInterate);
   }
 }
 
 const formatSearchedString = (str: string) =>
   str.toLocaleLowerCase().trim();
 
-const strContains = (valueToBeScanned: string, searchedValue: string) =>
+const strContains = (valueToBeScanned: any, searchedValue: string) =>
   isString(valueToBeScanned) && formatSearchedString(valueToBeScanned).includes(formatSearchedString(searchedValue))
