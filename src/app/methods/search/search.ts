@@ -42,7 +42,7 @@ const objSearch = (valueToBeScanned: Object, searchedValue: string, newArray: an
   }
 }
 
-const formatSearchedString = (str: string) =>
+const formatSearchedString = (str: string): string =>
   str.toLocaleLowerCase().trim();
 
 const strContains = (valueToBeScanned: any, searchedValue: string) =>
